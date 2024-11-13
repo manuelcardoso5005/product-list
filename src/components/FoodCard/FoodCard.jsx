@@ -1,11 +1,9 @@
 import "./FoodCard.css";
 
 export default function FoodCard({ food }) {
-  turn(
+  return (
     <div className="food-card">
-      <div className="food-card__img">
-        <img src={food.img} alt={food.name} />
-      </div>
+      <div className="food-card__img">Food Card</div>
     </div>
   );
 }
