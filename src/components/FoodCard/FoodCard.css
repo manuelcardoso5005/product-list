@@ -1,26 +1,92 @@
 .food-card {
-  min-width: 200px;
-  min-height: 200px;
-  /*   border: 1px solid #ccc; */
-  border-radius: 5px;
-  /*   padding: 10px; */
-  /*   margin: 10px; */
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  cursor: pointer;
-}
-
-/* Efeito de "zoom" no hover */
-.food-card:hover {
-  transform: scale(1.05);
+  margin: 10px;
+  position: relative;
 }
 
 .food-card__img {
   width: 100%;
-  height: 100%;
-  /*   background: url("https://i.ibb.co/qd6Q2CQ/image-waffle-desktop.jpg"); */
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 0;
+  padding-bottom: 95%;
+  position: relative;
+  overflow: hidden;
   border-radius: 5px;
+}
+
+.food-card__img .food_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.food-card:hover .food-card__img .food_img {
+  transform: scale(1.05);
+}
+
+.add-cart-container {
+  position: absolute;
+  bottom: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border: 1px solid var(--rose-300);
+  overflow: hidden;
+  border-radius: 30px;
+  color: var(--rose-900);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  width: 180px;
+  height: 50px;
+}
+
+.add-cart-container__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-cart-container__text p {
+  font-weight: 700;
+  margin-left: 0.5em;
+  font-size: 0.9em;
+  color: var(--rose-900);
+}
+
+.hide {
+  display: none;
+}
+
+.add-cart-container__value {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 1em;
+  background-color: var(--red);
+  color: #fff;
+}
+
+.icon-crement {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.add-cart-container__value__count {
+  font-size: 1em;
+  text-align: center;
+  font-weight: bold;
 }

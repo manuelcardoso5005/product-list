@@ -1,12 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
 
+:root {
+  --red: hsl(14, 86%, 42%);
+  --green: hsl(159, 69%, 38%);
+  --rose-50: hsl(20, 50%, 98%);
+  --rose-100: hsl(13, 31%, 94%);
+  --rose-300: hsl(14, 25%, 72%);
+  --rose-400: hsl(7, 20%, 60%);
+  --rose-500: hsl(12, 20%, 44%);
+  --rose-900: hsl(14, 65%, 9%);
+}
+
 body {
-  margin: 0;
   font-family: "Red Hat Text", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   font-weight: 400;
+  background-color: var(--rose-50);
 }
 
 * {
@@ -27,6 +38,22 @@ ol {
 /* Para dispositivos móveis pequenos */
 @media (max-width: 375px) {
   /* estilos para 375px ou menos */
+}
+
+@media screen and (min-width: 500px) {
+  .food-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .food-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
 }
 
 /* Para dispositivos móveis maiores e tablets */
