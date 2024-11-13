@@ -30,7 +30,7 @@
 
 .add-cart-container {
   position: absolute;
-  bottom: 42px;
+  bottom: 90px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #fff;
@@ -89,4 +89,14 @@
   font-size: 1em;
   text-align: center;
   font-weight: bold;
+}
+
+.food-details {
+  padding-top: 50px;
+}
+
+.food-details .food_name {
+  font-weight: 400;
+  color: var(--rose-500);
+  font-size: 1.2em;
 }
