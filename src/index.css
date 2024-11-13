@@ -24,11 +24,26 @@ ol {
   list-style: none;
 }
 
-@media screen and (max-width: 375px) {
+/* Para dispositivos móveis pequenos */
+@media (max-width: 375px) {
+  /* estilos para 375px ou menos */
 }
 
-@media screen and (min-width: 376px) {
+/* Para dispositivos móveis maiores e tablets */
+@media (min-width: 376px) and (max-width: 767px) {
+  /* estilos entre 376px e 767px */
 }
 
-@media screen and (min-width: 1440px) {
+/* Para tablets e desktops pequenos */
+@media (min-width: 768px) and (max-width: 1439px) {
+  /* estilos entre 768px e 1439px */
+}
+
+/* Para desktops grandes */
+@media (min-width: 1440px) {
+  .food-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
 }
