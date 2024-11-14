@@ -1,0 +1,48 @@
+.card {
+  padding: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card .left-li .left-li-price-group {
+  margin-top: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.card .left-li .left-li-food-name {
+  font-weight: 600;
+  color: var(--rose-900);
+}
+
+.card .left-li .left-li-price-group p:nth-child(1) {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.card .left-li .left-li-price-group p:nth-child(2) {
+  color: var(--rose-400);
+  margin: 0 1em;
+}
+
+.card .left-li .left-li-price-group p:nth-child(3) {
+  color: var(--rose-500);
+  font-weight: 600;
+}
+
+.right-li img {
+  border: 1px solid var(--rose-500);
+  padding: 0.2em;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--rose-500);
+  transition: all 0.3s ease-in-out;
+}
+
+.right-li img:hover {
+  border: 1px solid var(--rose-900);
+  color: var(--rose-900);
+}

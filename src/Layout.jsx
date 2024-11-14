@@ -132,9 +132,11 @@ function Layout() {
             <p className="empty-text">Your added items will appear here</p>
           </div>
           <div className="cart-container">
-            <div className="cr-container">
+            <ul className="cr-container">
               <Card />
-            </div>
+              <Card />
+              <Card />
+            </ul>
             <div>
               <div className="price_cart">
                 <p>Order Total</p>
