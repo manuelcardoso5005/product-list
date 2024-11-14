@@ -1,26 +1,24 @@
 import { useState, useEffect } from "react";
 import FoodCard from "./components/FoodCard/FoodCard.jsx";
+import Card from "./components/Card/Card.jsx";
+import emptyCart from "./assets/images/illustration-empty-cart.svg";
+import treeIcon from "./assets/images/icon-carbon-neutral.svg";
 
 function Layout() {
-  // State para armazenar a URL da imagem com base no tamanho da tela
   const [screenSize, setScreenSize] = useState(window.innerWidth);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
-  // Função para atualizar o tamanho da tela
   const updateScreenSize = () => {
     setScreenSize(window.innerWidth);
   };
 
   useEffect(() => {
-    // Adiciona o event listener para monitorar o redimensionamento da janela
     window.addEventListener("resize", updateScreenSize);
-
-    // Limpeza do event listener
     return () => {
       window.removeEventListener("resize", updateScreenSize);
     };
   }, []);
 
-  // Função para escolher o link correto da imagem
   const getImageLink = (image) => {
     if (screenSize < 375) {
       return image.mobile;
@@ -108,7 +106,7 @@ function Layout() {
   ];
 
   return (
-    <>
+    <div id="container">
       <section className="left-side">
         <div className="food-container">
           <h1 className="food-container-title">Desserts</h1>
@@ -120,13 +118,40 @@ function Layout() {
                 food_name={image.food_name}
                 food_full_name={image.food_full_name}
                 food_price={`$ ${image.food_price}`}
+                onClick={() => setSelectedIndex(index + 1)} // Incrementa o índice para começar de 1
               />
             ))}
           </div>
         </div>
       </section>
-      <section>Right</section>
-    </>
+      <section className="right-side">
+        <div className="rs-container">
+          <h1>Your Cart ({selectedIndex || 0})</h1>{" "}
+          <div className="empty-cart hide">
+            <img src={emptyCart} alt="" />
+            <p className="empty-text">Your added items will appear here</p>
+          </div>
+          <div className="cart-container">
+            <div className="cr-container">
+              <Card />
+            </div>
+            <div>
+              <div className="price_cart">
+                <p>Order Total</p>
+                <p className="price_cart_text">$46.50</p>
+              </div>
+              <div className="price_sms">
+                <img src={treeIcon} alt="" />
+                <p>
+                  This is a <span>Carbon-neutral</span> delivery
+                </p>
+              </div>
+              <button className="btn-order">Confirm Order</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
 

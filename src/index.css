@@ -35,30 +35,153 @@ ol {
   list-style: none;
 }
 
+/*Rigth Side */
+
+/*Price Area */
+.price_cart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.price_cart_text {
+  font-size: 1.5em;
+  font-weight: 900;
+}
+/* Carbon Message */
+
+.price_sms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--rose-50);
+  padding: 1em;
+  border-radius: 10px;
+  margin: 1.5em 0;
+}
+
+.price_sms p {
+  margin-left: 0.5em;
+}
+
+.price_sms span {
+  font-weight: bold;
+}
+
+.btn-order {
+  background-color: var(--red);
+  color: #fff;
+  padding: 1.1em 1em;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1em;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+#container {
+  transition: all 0.3s ease-in-out;
+}
+
+.rs-container {
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 20px;
+}
+
+.right-side h1 {
+  color: 1.2em;
+  color: var(--red);
+  margin-bottom: 0.5em;
+}
+
+.right-side {
+  width: 100%;
+}
+
+.right-side .empty-cart {
+  text-align: center;
+  height: 100%;
+  text-align: center;
+  margin: 2em 0;
+}
+
+.right-side .empty-cart img {
+  margin-bottom: 1em;
+}
+
+.hide-block {
+  display: none;
+}
 /* Para dispositivos móveis pequenos */
 @media (max-width: 375px) {
   /* estilos para 375px ou menos */
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (max-width: 600px) {
+  .food-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 601px) {
   .food-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
   }
+
+  .right-side {
+    width: 410px;
+  }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 991px) {
+  #container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .right-side {
+    margin-left: 40px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  #container {
+    padding: 2em;
+  }
+
+  .right-side {
+    margin: 0 auto;
+    padding-top: 5em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
   .food-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+  }
+
+  #container {
+    padding: 9em 2em;
   }
 }
 
 /* Para dispositivos móveis maiores e tablets */
 @media (min-width: 376px) and (max-width: 767px) {
   /* estilos entre 376px e 767px */
+  /*   body {
+    padding: 2em 1em;
+  } */
 }
 
 /* Para tablets e desktops pequenos */
@@ -68,9 +191,7 @@ ol {
 
 /* Para desktops grandes */
 @media (min-width: 1440px) {
-  .food-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+  #container {
+    padding: 8em 8em;
   }
 }

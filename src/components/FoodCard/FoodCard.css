@@ -9,7 +9,7 @@
   height: 0;
   padding-bottom: 95%;
   position: relative;
-  overflow: hidden;
+  /*   overflow: hidden; */
   border-radius: 5px;
 }
 
@@ -22,6 +22,7 @@
   left: 0;
   transition: transform 0.3s ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .food-card:hover .food-card__img .food_img {
@@ -30,7 +31,7 @@
 
 .add-cart-container {
   position: absolute;
-  bottom: 90px;
+  bottom: -25px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #fff;
@@ -99,4 +100,27 @@
   font-weight: 400;
   color: var(--rose-500);
   font-size: 1.2em;
+}
+
+.food-details .food_full_name {
+  color: var(--rose-900);
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0.3em 0;
+}
+
+.food-details .food_price {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--red);
+  margin: 0.4em 0;
+}
+
+.food-container-title {
+  font-size: 2.5em;
+  margin-bottom: 0.7em;
+}
+
+.empty-text {
+  color: var(--rose-900);
 }

@@ -9,7 +9,7 @@ export default function FoodCard({
   food_price,
 }) {
   const [isClicked, setIsClicked] = useState(false);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const incrementCount = () => {
     setCount((prevCount) => prevCount + 1);
@@ -23,39 +23,39 @@ export default function FoodCard({
     <div className="food-card">
       <div className="food-card__img">
         <img src={food_image} alt="" className="food_img" />
-      </div>
-      <div
-        className="add-cart-container"
-        onClick={() => setIsClicked((prev) => !prev)}
-      >
-        {!isClicked ? (
-          <div className="add-cart-container__text">
-            <img src={addChartIcon} alt="Add to cart" />
-            <p>Add to Cart</p>
-          </div>
-        ) : (
-          <div className="add-cart-container__value">
-            <div
-              className="icon-crement add-cart-container__value__decrement"
-              onClick={(e) => {
-                e.stopPropagation(); 
-                decrementCount();
-              }}
-            >
-              -
+        <div
+          className="add-cart-container"
+          onClick={() => setIsClicked((prev) => !prev)}
+        >
+          {!isClicked ? (
+            <div className="add-cart-container__text">
+              <img src={addChartIcon} alt="Add to cart" />
+              <p>Add to Cart</p>
             </div>
-            <div className="add-cart-container__value__count">{count}</div>
-            <div
-              className="icon-crement add-cart-container__value__increment"
-              onClick={(e) => {
-                e.stopPropagation();
-                incrementCount();
-              }}
-            >
-              +
+          ) : (
+            <div className="add-cart-container__value">
+              <div
+                className="icon-crement add-cart-container__value__decrement"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  decrementCount();
+                }}
+              >
+                -
+              </div>
+              <div className="add-cart-container__value__count">{count}</div>
+              <div
+                className="icon-crement add-cart-container__value__increment"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  incrementCount();
+                }}
+              >
+                +
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
       <div className="food-details">
         <h3 className="food_name">{food_name}</h3>
